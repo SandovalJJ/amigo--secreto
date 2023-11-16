@@ -11,7 +11,11 @@ class ruletaController extends Controller
 {
     public function index() {
 
-
+        
+        $usuarioAutenticado = Auth::user();
+        $generoUsuario = $usuarioAutenticado->genero; // Asumiendo que el usuario tiene un campo 'genero'
+        
+        $generoOpuesto = $generoUsuario === 'M' ? 'F' : 'M';
 
         //--------------por si lo suegan entre agencias o por generos--------------------------
         $condicion = User::select('genero')
@@ -20,16 +24,22 @@ class ruletaController extends Controller
 
 
         $datos = User::select('cc_user', 'genero')
-        ->where('estado','=','0')
-        ->where('cc_user', '!=', Auth::user()->cc_user)
+        ->where('estado', '=', '0')
+        ->where('cc_user', '!=', $usuarioAutenticado->cc_user)
+        ->where('genero', $generoOpuesto)
         ->get();
 
+        if ($datos->isEmpty()) {
+            // Si no hay usuarios del género opuesto, obtén de cualquier género
+            $datos = User::select('cc_user', 'genero')
+                ->where('estado', '=', '0')
+                ->where('cc_user', '!=', $usuarioAutenticado->cc_user)
+                ->get();
+        }
 
-        $total = User::select('estado')
-        ->where('estado','=','0')
-        ->where('cc_user', '!=', Auth::user()->cc_user)
-        ->get()->count();
 
-        return view('ruleta', compact('total','datos', 'condicion'));
+        $total = $datos->count();
+
+        return view('ruleta', compact('total', 'datos', 'generoUsuario'));
     }
 }

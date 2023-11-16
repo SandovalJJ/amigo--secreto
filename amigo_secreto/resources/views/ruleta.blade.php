@@ -103,10 +103,9 @@ $rol = json_encode($edmin);
 
 
                 @for ($i = 0; $i < $total; $i++)
-
                     {{ $i }}: '{{ $datos[$i]->cc_user }}',
-                    
                 @endfor
+
             }
 
             function iniciar() {
