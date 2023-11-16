@@ -1,0 +1,69 @@
+            #slot {
+                background: url("../img/amigos.png")repeat-y;
+                border: 1px solid;
+                height: 260px;
+                width: 400px;
+                margin: auto;
+
+       background-size: auto 110%;
+                box-shadow: 10px 0px 10px black;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+
+            #slott {
+                margin: 10% auto auto auto;
+            }
+
+            #resultad {
+                margin: auto;
+                border: 1px solid;
+                height: 70px;
+                width: 300px;
+                box-shadow: 10px 10px 10px black;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                text-align: center;
+                justify-content: center;
+                margin-top: 10px;
+                font-size: 25px;
+                font-style: italic;
+                background: -webkit-linear-gradient(green, red);
+                background-clip: padding;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            #iniciar {
+                width: 130px;
+                height: 73px;
+                box-shadow: 5px 7px 5px 0px green;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                margin: auto;
+                border-bottom-left-radius: 20px;
+            }
+
+            #parar {
+                width: 130px;
+                height: 73px;
+                box-shadow: 5px 7px 5px 0px red;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                margin: auto;
+                margin-left: 6%;
+                border-bottom-left-radius: 20px;
+            }
+
+            #botones {
+                text-align: center;
+                padding: 2%;
+                margin-top: 15px;
+            }
+
