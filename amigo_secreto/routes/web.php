@@ -42,3 +42,17 @@ Route::get('/agencias',[adminController::class, 'agencias'])->middleware('auth')
 Route::get('/auto',[adminController::class, 'auto'])->middleware('auth');
 
 
+//Rutas que modifican el modal del mensaje de bienvenida
+Route::get('/bienvenida', function () {
+    return view('bienvenida');
+});
+
+Route::post('/save-content',[adminController::class, 'store'])->name('save.content')->middleware('auth');
+Route::get('/latest-content', [adminController::class, 'getLatestContent']);
+
+
+
+
+
+
+

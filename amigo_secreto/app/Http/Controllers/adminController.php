@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DateTime;
 use DB;
+use App\Models\Bienvenida;
+use Illuminate\Support\Facades\View;
+
 
 date_default_timezone_set('America/Bogota');
 
@@ -192,6 +195,24 @@ class adminController extends Controller
         }
     
         return false;
+    }
+
+//MODAL DE LOGIN
+
+public function getLatestContent()
+{
+    $latestContent = Bienvenida::latest('id_bienvenida')->first();
+    return response()->json($latestContent);
+}
+
+    
+    public function store(Request $request)
+    {
+        $content = new Bienvenida;
+        $content->contenido = $request->input('content');
+        $content->save();
+    
+        return back();
     }
     
 

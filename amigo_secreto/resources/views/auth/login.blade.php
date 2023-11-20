@@ -133,39 +133,12 @@
 		<div class="modal-content">
 
 			<div class="modal-body">
-				<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto">
 					<div id="resultados_ajax2"></div>
-						<h3 style="color:black" align="center"><strong>AMIGO SECRETO SEPTIEMBRE 2023.</strong></h3>
-						<br>
-						<h4 style="color:black; font-size: 21px;" ; align="justify">  
-							    <strong>• INSCRIPCIONES:</strong> sin costo, desde el Jueves 07 de septiembre hasta el Sabado 09 de septiembre del 2023 a las 23:59 horas.
-							<br>
-							<br>
-							    <strong>• SELECCIONAR EL AMIGO SECRETO:</strong> El asociado inscrito debe ingresar el Lunes 11 de septiembre desde 7:00 horas hasta las 23:59 horas y seleccionar el amigo secreto girando la ruleta.
-							<br>
-							<br>
-						    	<strong>• NOTA:</strong> Si durante dicho lapso, el asociado inscrito en el Juego de AMIGO SECRETO, no ingresa a seleccionar el amigo secreto, el software diseñado para esta actividad le asignará automáticamente el amigo secreto el día Martes 12 de septiembre del 2023.
-							<br>
-							<br>
-					    		<strong>• ENDULZAR:</strong> El asociado inscrito podrá endulzar a su amigo secreto en la Agencia a la cual pertenece, desde el lunes 11 de septiembre hasta el Viernes 15 de septiembre 2023.
-					    	<br>
-							<br>
-					    		<strong>• ENTREGA REGALO DE AMIGO SECRETO:</strong>Asociados Inscritos al juego y a la fiesta, entregaran los regalos el dia Sabado 16 de septiembre en la sede principal.
-					    	<br>
-							<br>
-					    		<strong>• INFORMACIÓN IMPORTANTE:</strong>
-					    	<br>
-							<br>
-					    		• En el momento de la inscripción para el juego de AMIGO SECRETO, el asociado inscrito podrá registrar la lista de regalos y dulces favoritos.
-					    	<br>
-							<br>
-							    •  El monto mínimo del regalo es de <strong>$20.000 pesos</strong>
-						</h4>
+         
 				    <div class="modal-header" style="display: flex; justify-content: center;">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
 					    </div>
-			    </form>
 
 			</div>
 		</div>
@@ -173,7 +146,16 @@
 </div>
 
 
+<script>
+$(document).ready(function() {
+    $.get('/latest-content', function(data) {
+        // Asegúrate de que 'data' contiene el campo 'contenido'
+        $('#myModal2 .modal-body').html(data.contenido);
+    });
+    $('#myModal2').modal('show'); // Muestra el modal después de obtener el contenido
+});
 
+  </script>
 
 
 

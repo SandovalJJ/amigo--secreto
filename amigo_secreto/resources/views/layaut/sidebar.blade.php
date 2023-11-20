@@ -18,7 +18,7 @@ $rol = json_encode($edmin);
 
 
 @endphp
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
 
     <div class="sidenav-header">
@@ -134,13 +134,17 @@ $rol = json_encode($edmin);
                     </div>
                     <span class="nav-link-text ms-1">Auto Asignar</span>
                 </a>
+            </li>      
+            <li class="nav-item">
+                <a class="nav-link text-white " href="{{ url('bienvenida') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Mensaje de bienvenida</span>
+                </a>
             </li>
-            
-            
-        
-            
-            
  @endif
+ 
             <hr class="horizontal light mt-0 mb-2">
 
            <li class="nav-item">
